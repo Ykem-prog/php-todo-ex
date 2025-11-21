@@ -16,7 +16,7 @@ the exercise is to collaborate on a simple project on GitHub as a team of 2 or
 All the code is in the `index.php` file.
 
 The incomplete lines of code are marked with: `// IMPLEMENT ME`.
-
+aaaa
 [archidep]: https://archidep.ch
 [mysql]: https://www.mysql.com
 [php]: https://www.php.net
