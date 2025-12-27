@@ -5,15 +5,15 @@
 // BASE_URL should be "/php-todo-ex/". If you are accessing the application at
 // "http://localhost:8888", then BASE_URL should be "/".
 define('BASE_URL', '/');
-
+	
 // Database connection parameters.
-define('DB_USER', 'todolist');
-define('DB_PASS', 'iLVGCu63k7JmQ0b9');
-define('DB_NAME', 'todolist');
-define('DB_HOST', '127.0.0.1');
-define('DB_PORT', '3306');
+define('DB_USER', getenv('TODOLIST_DB_USER') ?: 'todolist');
+define('DB_PASS', getenv('TODOLIST_DB_PASS'));
+define('DB_NAME', getenv('TODOLIST_DB_NAME') ?: 'todolist');
+define('DB_HOST', getenv('TODOLIST_DB_HOST') ?: '127.0.0.1');
+define('DB_PORT', getenv('TODOLIST_DB_PORT') ?: '3306');
 
-$db = new PDO('mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+db = new PDO('mysql:host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
 $items = array();
 
 if (isset($_POST['action'])) {
@@ -83,7 +83,7 @@ $items = $db->query($selectQuery);
 <html>
 
 <head>
-  <title>TodoList</title>
+  <title>I changed you</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
